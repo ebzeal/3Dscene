@@ -1,18 +1,16 @@
 import express from 'express';
-// import mongoose from 'mongoose';
-// import env from 'dotenv';
+import env from 'dotenv';
+import {ApolloServer, gql} from 'apollo-server-express';
+import cors from 'cors';
 // import routes from './api/routes';
 
 const app = express();
+app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// env.config();
-// require('./api/models/User');
-
-// app.use('/api/v1', routes);
-
-// const mongoURI = process.env.NODE_ENV === 'production' ? process.env.DATABASE_URL_DEV : process.env.DATABASE_URL_TEST;
+env.config();
 
 const port = process.env.PORT || 5000;
 

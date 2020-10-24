@@ -1,0 +1,16 @@
+[
+  {
+    "id": "IQop-Baba",
+    "email": "olu@mail.com",
+    "password": "olu123",
+    "userName": "olu",
+    "fullName": "Olusola Ajayi"
+  },
+  {
+    "id": "mAnY-cACA",
+    "email": "eben@mail.com",
+    "password": "eben123",
+    "userName": "eben",
+    "fullName": "Ebenezer Ajayi"
+  }
+]
