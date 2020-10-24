@@ -1,7 +1,9 @@
 import express from 'express';
 import env from 'dotenv';
-import {ApolloServer, gql} from 'apollo-server-express';
+import { ApolloServer, gql } from 'apollo-server-express';
 import cors from 'cors';
+import fs from 'fs';
+import resolvers from './src/graphql/resolvers';
 // import routes from './api/routes';
 
 const app = express();
@@ -14,13 +16,12 @@ env.config();
 
 const port = process.env.PORT || 5000;
 
-// mongoose
-//   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false })
-//   .then(() => {
+const typeDefs = gql(fs.readFileSync('./src/graphql/schema.graphql', { encoding: 'utf8' }));
+
+// const context = ({ req }) => ({ user: req.user && db.users.get(req.user.sub) });
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
+apolloServer.applyMiddleware({ app, path: '/graphql' });
+
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
-// })
-// .catch(err => {
-//   console.log(`db connection error ${err}`);
-// });
