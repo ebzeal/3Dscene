@@ -4,7 +4,7 @@
   "description": "An app that uses NodeJs, React, GraphQL and threejs",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node ./index.js --env",
+    "dev": "nodemon --exec babel-node --ignore src/data/ ./index.js --env",
     "clear": "rm -rf build",
     "build": "npm run clear && babel index.js --out-dir build",
     "start": "babel-node ./index.js --env",
@@ -31,7 +31,7 @@
   "dependencies": {
     "@babel/runtime": "^7.12.1",
     "apollo-server-express": "^2.18.2",
-    "bcryptjs": "^2.4.3",
+    "argon2": "^0.27.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
