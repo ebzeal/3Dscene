@@ -5,6 +5,10 @@ const FormDiv = styled.div`
   padding: 20px;
   box-shadow: -1px 1px #ccc, -1px 1px #ccc, -1px 1px #ccc, -1px 1px #ccc, -1px 1px #ccc;
   min-width: 100%;
+
+  @media (max-width: 800px){  
+    margin-top: 40px
+  }
  
   label {
     font-size:13px;

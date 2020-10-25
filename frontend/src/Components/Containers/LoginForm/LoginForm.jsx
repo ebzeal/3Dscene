@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 
+import LoginCard from './LoginCard';
 import { FormDiv } from './LoginForm.styles';
 
 const LoginForm = () => {
@@ -13,7 +14,6 @@ const LoginForm = () => {
   };
   const onSignup = data => console.log(data);
 
-  // console.log(watch("details"));
   return (
     <>
     <FormDiv>
@@ -84,7 +84,7 @@ const LoginForm = () => {
       </form>
 }
     </FormDiv>
-    <p style={{ cursor:'pointer', fontSize:'13px' }} onClick={()=>{setIsLogin(!isLogin)}}> {isLogin ? "Sign Up here" : "Login here"}  --></p>
+    <p style={{ cursor:'pointer', fontSize:'13px', marginTop:"25px" }} onClick={()=>{setIsLogin(!isLogin)}}> {isLogin ? "Sign Up here" : "Login here"}  --></p>
     </>
   );
 };
