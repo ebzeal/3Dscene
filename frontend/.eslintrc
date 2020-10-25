@@ -16,6 +16,8 @@
     "prettier/prettier": ["error"],
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/label-has-associated-control": ["error",{"labelComponents": [],"labelAttributes": [], "controlComponents": [], "assert": "either", "depth": 25}]
+
     "no-underscore-dangle": "off",
     "no-return-assign": "off"
   }
