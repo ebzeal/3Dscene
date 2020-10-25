@@ -1,7 +1,7 @@
 {
   "name": "3dscene",
   "version": "1.0.0",
-  "description": "An app that uses NodeJs, React, GraphQL and threejs",
+  "description": "An app that uses NodeJs, GraphQL and Apollo-server",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node --ignore src/data/ ./index.js --env",
