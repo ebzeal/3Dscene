@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useForm } from 'react-hook-form';
 
-import LoginCard from './LoginCard';
+import Button from '../../Components/Button/Button';
 import { FormDiv } from './LoginForm.styles';
 
 const LoginForm = () => {
@@ -32,8 +32,8 @@ const LoginForm = () => {
         
         {errors.password && <span>This field is required</span>}
         
+        <Button type="submit" text="Login" />
         
-        <button type="submit"> Login </button>
       </form> 
   :
 
@@ -80,7 +80,7 @@ const LoginForm = () => {
         {errors.confirmpassword && <span>Does not match password</span>}
         
         
-        <button type="submit">Sign Up</button>
+        <Button type="submit" text="Sign Up" />
       </form>
 }
     </FormDiv>
