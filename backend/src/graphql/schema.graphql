@@ -1,5 +1,5 @@
 type Query {
-  user(logInDetails:LogInDetails): User
+  user(logInDetails:LogInDetails): String
 }
 
 type Mutation {

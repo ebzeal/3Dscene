@@ -1,5 +1,6 @@
 import db from '../db';
 import PasswordHash from '../utils/passwordHash';
+import tokenHelp from '../utils/jwtToken';
 
 /**
  * @class UserService
@@ -43,7 +44,15 @@ class UserService {
       );
       const decryptPassword = await PasswordHash.verifyPassword(isUser?.password, password);
       if (!(isUser && decryptPassword)) throw new Error('User not found');
-      return isUser;
+     
+      return tokenHelp.sign({
+        id: isUser.id,
+        email: isUser.email,
+        password: isUser.password,
+        userName: isUser.userName,
+        fullName: isUser.fullName
+
+      })
     } catch (error) { return error; }
   }
 }
