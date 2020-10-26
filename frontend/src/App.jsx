@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { ApolloProvider } from '@apollo/client';
 
 import Login from './Components/Containers/Login/Login';
