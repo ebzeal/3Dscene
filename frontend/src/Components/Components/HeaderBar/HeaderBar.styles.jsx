@@ -11,6 +11,10 @@ const HeaderDiv = styled.div`
   p {
     padding: 0 10px;
     cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
   }
 `;
 

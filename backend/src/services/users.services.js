@@ -24,7 +24,15 @@ class UserService {
       if (isUserEmail && isUserEmail.email === email) throw new Error('email already exist in our DB');
       input.password = hashedPassword;
       const id = await db.users.create(input);
-      return db.users.get(id);
+      const user = await db.users.get(id);
+
+      return tokenHelp.sign({
+        id: user.id,
+        email: user.email,
+        userName: user.userName,
+        fullName: user.fullName
+
+      })
     } catch (error) { return error; }
   }
 
@@ -48,7 +56,6 @@ class UserService {
       return tokenHelp.sign({
         id: isUser.id,
         email: isUser.email,
-        password: isUser.password,
         userName: isUser.userName,
         fullName: isUser.fullName
 

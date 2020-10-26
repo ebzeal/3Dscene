@@ -4,12 +4,12 @@ import { LoginPage, LogingPageRight } from './Login.styles';
 import LoginOcean from '../../Components/LoginOcean/LoginOcean';
 import LoginForm from '../LoginForm/LoginForm';
 
-const Login = () => {
+const Login = ({handleGetUser}) => {
   return (
     <LoginPage>
       <LoginOcean />
       <LogingPageRight>
-        <LoginForm />
+        <LoginForm  handleGetUser={handleGetUser}/>
       </LogingPageRight>
     </LoginPage>
   );
